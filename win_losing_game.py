@@ -7,6 +7,7 @@
 
 
 import random
+#import matplotlib.pyplot as plt
 
 def simulate_game(n_trials):
     trials = 0
@@ -23,7 +24,12 @@ def estimate_win_probability(n_trials, num_simulations=100000):
     wins = sum(simulate_game(n_trials) for _ in range(num_simulations))
     return wins / num_simulations
 
+#win_probs=[]
 # Testing for different even numbers of trials
 for n in range(2, 21, 2): # From 2 to 20 trials, stepping by 2
     prob = estimate_win_probability(n)
+    #win_probs.append(prob)
     print(f"Probability of Player A winning with {n} trials: {prob:.4f}")
+
+#plt.plot(range(2,42,2),win_probs)
+#plt.show()
